@@ -202,6 +202,7 @@ config ARCH_SAMA5D3
 	select HAS_MACB
 	select AT91SAM9G45_RESET
 	select HAVE_AT91_FUSE
+	select HAVE_AT91_BOOTMODE
 
 endchoice
 
