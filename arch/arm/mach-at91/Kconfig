@@ -9,6 +9,9 @@ config HAVE_AT91_DBGU1
 config HAVE_AT91_LOWLEVEL_INIT
 	bool
 
+config HAVE_AT91_BOOTMODE
+	bool
+
 config HAVE_AT91_FUSE
 	bool
 
@@ -581,5 +584,10 @@ config AT91_LOAD_BAREBOX_SRAM
 config AT91_FUSE
 	bool "at91 fuse"
 	depends on HAVE_AT91_FUSE
+
+config AT91_BOOTMODE
+	bool "at91 bootmode detect and export"
+	depends on HAVE_AT91_BOOTMODE
+	default y
 
 endif

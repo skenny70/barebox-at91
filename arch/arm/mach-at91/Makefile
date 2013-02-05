@@ -23,6 +23,7 @@ obj-$(CONFIG_AT91SAM9_SMC) += sam9_smc.o
 obj-$(CONFIG_AT91SAM9_TIMER) += at91sam926x_time.o
 
 obj-$(CONFIG_AT91_FUSE) += fuse.o
+obj-$(CONFIG_AT91_BOOTMODE) += bootmode.o
 
 # CPU-specific support
 obj-$(CONFIG_ARCH_AT91RM9200)	+= at91rm9200.o at91rm9200_time.o at91rm9200_devices.o
