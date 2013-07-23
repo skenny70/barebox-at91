@@ -31,8 +31,7 @@
 #include <sizes.h>
 #include <linux/mtd/nand.h>
 #include <mach/board.h>
-#include <mach/at91sam9_smc.h>
-#include <mach/at91sam9_smc.h>
+#include <mach/at91sama5_smc.h>
 #include <gpio.h>
 #include <mach/io.h>
 #include <mach/at91_pmc.h>
@@ -73,19 +72,28 @@ static struct atmel_nand_data nand_pdata = {
 	.on_flash_bbt	= 1,
 };
 
-static struct sam9_smc_config cm_nand_smc_config = {
-	.ncs_read_setup		= 0,
-	.nrd_setup		= 1,
-	.ncs_write_setup	= 0,
-	.nwe_setup		= 1,
+static struct sama5_smc_config cm_nand_smc_config = {
+	.ncs_read_setup	  = 0,
+	.nrd_setup        = 1,
+	.ncs_write_setup  = 0,
+	.nwe_setup        = 1,
 
-	.ncs_read_pulse		= 6,
-	.nrd_pulse		= 4,
-	.ncs_write_pulse	= 5,
-	.nwe_pulse		= 3,
+	.ncs_read_pulse	  = 6,
+	.nrd_pulse        = 4,
+	.ncs_write_pulse  = 5,
+	.nwe_pulse        = 3,
 
-	.read_cycle		= 6,
-	.write_cycle		= 5,
+	.read_cycle       = 6,
+	.write_cycle	  = 5,
+
+	.tclr_timings	  = 3,
+	.tadl_timings	  = 10,
+	.tar_timings	  = 3,
+	.ocms_timings	  = 0,
+	.trr_timings	  = 4,
+	.twb_timings	  = 5,
+	.rbnsel_timings	  = 3,
+	.nfsel_timings	  = 1,
 
 	.mode			= AT91_SMC_READMODE | AT91_SMC_WRITEMODE | AT91_SMC_EXNWMODE_DISABLE,
 	.tdf_cycles		= 1,
@@ -104,7 +112,7 @@ static void ek_add_device_nand(void)
 		cm_nand_smc_config.mode |= AT91_SMC_DBW_8;
 
 	/* configure chip-select 3 (NAND) */
-	sam9_smc_configure(0, 3, &cm_nand_smc_config);
+	sama5_smc_configure(0, 3, &cm_nand_smc_config);
 
 	at91_add_device_nand(&nand_pdata);
 }

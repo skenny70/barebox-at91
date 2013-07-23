@@ -18,6 +18,9 @@ config HAVE_AT91_FUSE
 config AT91SAM9_SMC
 	bool
 
+config AT91SAMA5_SMC
+	bool
+
 config AT91SAM9_TIMER
 	bool
 
@@ -30,7 +33,7 @@ config SOC_AT91SAM9
 config SOC_SAMA5
 	bool
 	select CPU_V7
-	select AT91SAM9_SMC
+	select AT91SAMA5_SMC
 	select AT91SAM9_TIMER
 
 config ARCH_TEXT_BASE

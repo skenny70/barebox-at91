@@ -477,7 +477,7 @@ static void sama5d3_initialize(void)
 	at91_add_sam9x5_gpio(4, SAMA5D3_BASE_PIOE);
 
 	at91_add_pit(SAMA5D3_BASE_PIT);
-	at91_add_sam9_smc(DEVICE_ID_SINGLE, SAMA5D3_BASE_HSMC + 0x600, 0xa0);
+	at91_add_sama5_smc(DEVICE_ID_SINGLE, SAMA5D3_BASE_HSMC + 0x600, 0xa0);
 	at91_add_fuse(SAMA5D3_BASE_FUSE, 8);
 }
 
