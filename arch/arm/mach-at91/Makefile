@@ -20,6 +20,7 @@ obj-$(CONFIG_AT91SAM9_RESET) += at91sam9_reset.o
 obj-$(CONFIG_AT91SAM9G45_RESET) += at91sam9g45_reset.o
 
 obj-$(CONFIG_AT91SAM9_SMC) += sam9_smc.o
+obj-$(CONFIG_AT91SAMA5_SMC) += sama5_smc.o
 obj-$(CONFIG_AT91SAM9_TIMER) += at91sam926x_time.o
 
 obj-$(CONFIG_AT91_FUSE) += fuse.o
